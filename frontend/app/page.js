@@ -1,10 +1,10 @@
 'use client'
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
+import { FaArrowAltCircleDown } from "react-icons/fa";
 
 export default function Home() {
-  const images = ['/poster1.jpg', 'poster2.jpg', 'poster3.jpg'];
+  const images = ['/poster2.jpg', 'poster1.jpg', 'poster3.jpg'];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -29,6 +29,14 @@ export default function Home() {
             }`}
           />
         ))}
+        <button
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+          className="absolute bottom-4 right-4 p-3 mx-3 my-3 bg-white rounded-full flex items-center justify-center text-black"
+        >
+          Explore movies! <span className='ml-2'><FaArrowAltCircleDown /></span>
+        </button>
+      </div>
+      <div className='bg-black w-screen h-screen'>
       </div>
     </>
   );

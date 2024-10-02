@@ -2,24 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.underline-animation {
-    position: relative;
-    display: inline-block;
-}
-
-.underline-animation::after {
+.hover\:underline-animation::after {
     content: '';
-    position: absolute;
+    display: block;
     width: 0;
     height: 2px;
-    display: block;
-    margin-top: 5px;
-    left: 0;
-    background: white;
-    transition: width 0.4s ease;
-}
-
-.underline-animation:hover::after {
-    width: 100%;
-    left: 0;
-}
+    background: black;
+    transition: width 0.3s;
+  }
+  
+  .hover\:underline-animation:hover::after {
+    width: 100%
+  }
+  
