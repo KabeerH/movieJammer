@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
 import Particles from '@/components/ui/particles';
 
 export default function Help() {

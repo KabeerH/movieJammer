@@ -20,7 +20,7 @@ export default function MovieDetails({ params }) {
     if (id) {
       {/* TESTING WITH AXIOS LIBRARY */}
       axios
-        .get(`${process.env.MOVIE_API}/api/movies/${id}`)
+        .get(`${process.env.NEXT_PUBLIC_MOVIE_API}/api/movies/${id}`)
         .then((response) => {
           setMovie(response.data);
           setLoading(false);
@@ -34,7 +34,7 @@ export default function MovieDetails({ params }) {
       //Check if the movie is already in the user's favorites
       if (token) {
         axios
-          .get(`${process.env.USER_API}/api/users/favorites`, {
+          .get(`${process.env.NEXT_PUBLIC_USER_API}/api/users/favorites`, {
             headers: { Authorization: `jwt ${token}` },
           })
           .then((response) => {
@@ -61,7 +61,7 @@ export default function MovieDetails({ params }) {
 
     axios
       .post(
-        `${process.env.USER_API}/api/users/favorites/${id}`,
+        `${process.env.NEXT_PUBLIC_USER_API}/api/users/favorites/${id}`,
         {},
         {
           headers: { Authorization: `jwt ${token}` },
@@ -77,14 +77,13 @@ export default function MovieDetails({ params }) {
   };
 
   const removeFromFavorites = () => {
-    const token = localStorage.getItem('token');
     if (!token) {
       router.push('/login');
       return;
     }
 
     axios
-      .delete(`${process.env.USER_API}/api/users/favorites/${id}`, {
+      .delete(`${process.env.NEXT_PUBLIC_USER_API}/api/users/favorites/${id}`, {
         headers: { Authorization: `jwt ${token}` },
       })
       .then((response) => {

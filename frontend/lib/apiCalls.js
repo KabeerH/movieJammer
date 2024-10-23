@@ -1,7 +1,7 @@
 //profile call (GET)
 export const profileCall = async (token) => {
     try {
-        const response = await fetch(`${process.env.USER_API}/api/users/profile`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_USER_API}/api/users/profile`, {
             method: 'GET',
             headers: {
                 'Authorization': `jwt ${token}`, 
@@ -21,7 +21,7 @@ export const profileCall = async (token) => {
 
 //profile call (PUT)
 export const updateProfileCall = async (token, data) => {
-    const response = await fetch(`${process.env.USER_API}/api/users/profile`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_USER_API}/api/users/profile`, {
         method: 'PUT',
         headers: {
             'Authorization': `jwt ${token}`,
@@ -37,7 +37,7 @@ export const updateProfileCall = async (token, data) => {
 
 //delete call (delete)
 export const deleteAccountCall = async (token) => {
-    const response = await fetch(`${process.env.USER_API}/api/users/profile`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_USER_API}/api/users/profile`, {
         method: 'DELETE',
         headers: {
             'Authorization': `jwt ${token}`,
@@ -51,7 +51,7 @@ export const deleteAccountCall = async (token) => {
 
 //login call 
 export const loginCall = async (username, password) => {
-    const response = await fetch(`${process.env.USER_API}/api/users/login`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_USER_API}/api/users/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ export const loginCall = async (username, password) => {
 
 //register call
 export const registerCall = async (username, email, password, confirmPassword, name, dob, location, bio) => {
-    const response = await fetch(`${process.env.USER_API}/api/users/register`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_USER_API}/api/users/register`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
