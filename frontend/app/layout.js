@@ -16,16 +16,25 @@ const geistMono = localFont({
 
 export const metadata = {
   title: "MovieJaMMer",
-  description: "created with love",
+  description: "Created by: Kabeer Harjani",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <NavBar />
-        {children}
-        <Footer />
+        <div className="flex flex-col min-h-screen">
+          {/* NavBar */}
+          <NavBar />
+
+          {/* Main content */}
+          <main className="flex-1">
+            {children}
+          </main>
+
+          {/* Footer */}
+          <Footer />
+        </div>
       </body>
     </html>
   );
