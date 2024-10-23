@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image'; 
 import Link from 'next/link'; 
@@ -35,19 +35,19 @@ const SearchPage = () => {
             }
         };
 
-        fetchMovies(); //fetch all the movies for search
+        fetchMovies(); //Fetch all the movies for search
     }, [query, page]); //Trigger fetch whenever the query or page changes
 
-    //function to handle next page
+    //Function to handle next page
     const handleNextPage = () => {
         setPage(prevPage => Math.min(prevPage + 1, totalPages)); //Prevent exceeding the last page
-        scrollToTop(); // Scroll to top when "Next" is clicked
+        scrollToTop(); //Scroll to top when "Next" is clicked
     };
 
-    //function to handle previous page
+    //Function to handle previous page
     const handlePreviousPage = () => {
-        setPage(prevPage => Math.max(prevPage - 1, 1)); //Prevent going below page 1
-        scrollToTop(); // Scroll to top when "Previous" is clicked
+        setPage(prevPage => Math.max(prevPage - 1, 1)); // Prevent going below page 1
+        scrollToTop(); //Scroll to top when "Previous" is clicked
     };
 
     //Function to scroll to the top of the screen
@@ -55,20 +55,20 @@ const SearchPage = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    //condition to check if movies haven't loadeded yet (display placeholder)
+    //Condition to check if movies haven't loaded yet (display placeholder)
     if (loading) {
         return (
-          <div className="flex justify-center items-center h-screen bg-gray-800">
-            <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-indigo-600"></div>
-          </div>
+            <div className="flex justify-center items-center h-screen bg-gray-800">
+                <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-indigo-600"></div>
+            </div>
         );
-      }
-    
+    }
+
     //Check if no movies are returned by the search 
     if (!movies.length && !loading) {
         return (
             <div className="min-h-screen bg-gray-800 flex flex-col items-center justify-center p-6">
-                {/* message */}
+                {/* Message */}
                 <h2 className="text-3xl font-bold text-indigo-600 mb-4">Oops! No Movies Found</h2>
                 <p className="text-lg text-gray-300 mb-6">
                     It seems we couldn&apos;t find any movies for &quot;<span className="text-white">{query}</span>&quot;.
@@ -152,4 +152,11 @@ const SearchPage = () => {
     );
 };
 
-export default SearchPage;
+// Wrap SearchPage in Suspense boundary
+const SearchPageWrapper = () => (
+    <Suspense fallback={<div>Loading...</div>}>
+        <SearchPage />
+    </Suspense>
+);
+
+export default SearchPageWrapper;
