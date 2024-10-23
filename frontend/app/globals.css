@@ -2,16 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-.hover\:underline-animation::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: black;
-    transition: width 0.3s;
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
   }
+
+@layer base {
+  :root {
+        --radius: 0.5rem;
+    }
+}
   
-  .hover\:underline-animation:hover::after {
-    width: 100%
-  }
+html {
+  scroll-behavior: smooth;
+}
   
