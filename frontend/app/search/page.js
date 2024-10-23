@@ -20,7 +20,7 @@ const SearchPage = () => {
             if (query) {
                 setLoading(true); //Set loading to true when fetching data
                 try {
-                    const response = await fetch(`http://localhost:8000/api/movies/q/search?query=${encodeURIComponent(query)}&page=${page}&limit=${itemsPerPage}`);
+                    const response = await fetch(`${process.env.MOVIE_API}/api/movies/q/search?query=${encodeURIComponent(query)}&page=${page}&limit=${itemsPerPage}`);
                     if (!response.ok) throw new Error('Network response was not ok');
                     const data = await response.json();
                     setMovies(data.movies); //Set movies to the array fetched

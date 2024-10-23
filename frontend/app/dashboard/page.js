@@ -23,14 +23,14 @@ export default function Dashboard() {
 
     {/* TESTING WITH AXIOS LIBRARY */}
     axios
-      .get('http://localhost:8080/api/users/favorites', {
+      .get(`${process.env.USER_API}/api/users/favorites`, {
         headers: { Authorization: `jwt ${token}` }
       })
       .then((response) => {
         const movieIds = response.data;
         if (movieIds.length > 0) {
           const movieDetailsPromises = movieIds.map((movieId) =>
-            axios.get(`http://localhost:8000/api/movies/${movieId}`)
+            axios.get(`${process.env.MOVIE_API}/api/movies/${movieId}`)
           );
           Promise.all(movieDetailsPromises)
             .then((movieDetailsResponse) => {
@@ -80,7 +80,7 @@ export default function Dashboard() {
             </h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {favorites.map((movie) => (
-              <Link key={movie._id} href={`http://localhost:3000/movies/${movie._id}`} passHref>
+              <Link key={movie._id} href={`${process.env.MOVIE_API}/movies/${movie._id}`} passHref>
                 <div className="bg-gray-900 p-6 rounded-lg shadow-lg cursor-pointer hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out flex flex-col h-full">
                   <div className="h-80 w-full mb-6">
                     <img

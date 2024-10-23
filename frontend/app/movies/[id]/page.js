@@ -20,7 +20,7 @@ export default function MovieDetails({ params }) {
     if (id) {
       {/* TESTING WITH AXIOS LIBRARY */}
       axios
-        .get(`http://localhost:8000/api/movies/${id}`)
+        .get(`${process.env.MOVIE_API}/api/movies/${id}`)
         .then((response) => {
           setMovie(response.data);
           setLoading(false);
@@ -34,7 +34,7 @@ export default function MovieDetails({ params }) {
       //Check if the movie is already in the user's favorites
       if (token) {
         axios
-          .get('http://localhost:8080/api/users/favorites', {
+          .get(`${process.env.USER_API}/api/users/favorites`, {
             headers: { Authorization: `jwt ${token}` },
           })
           .then((response) => {
@@ -61,7 +61,7 @@ export default function MovieDetails({ params }) {
 
     axios
       .post(
-        `http://localhost:8080/api/users/favorites/${id}`,
+        `${process.env.USER_API}/api/users/favorites/${id}`,
         {},
         {
           headers: { Authorization: `jwt ${token}` },
@@ -84,7 +84,7 @@ export default function MovieDetails({ params }) {
     }
 
     axios
-      .delete(`http://localhost:8080/api/users/favorites/${id}`, {
+      .delete(`${process.env.USER_API}/api/users/favorites/${id}`, {
         headers: { Authorization: `jwt ${token}` },
       })
       .then((response) => {
