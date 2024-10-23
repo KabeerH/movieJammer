@@ -80,7 +80,7 @@ export default function Dashboard() {
             </h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {favorites.map((movie) => (
-              <Link key={movie._id} href={`https://movie-jammer.vercel.app/${movie._id}`} passHref>
+              <Link key={movie._id} href={`https://movie-jammer.vercel.app/movies/${movie._id}`} passHref>
                 <div className="bg-gray-900 p-6 rounded-lg shadow-lg cursor-pointer hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out flex flex-col h-full">
                   <div className="h-80 w-full mb-6">
                     <img
