@@ -104,7 +104,9 @@ export default function Dashboard() {
         <div className="flex justify-center items-center h-screen bg-gray-800">
           <div className="text-center">
             <p className="text-3xl font-semibold text-white mb-4">No Favorite Movies Yet!</p>
-            <p className="text-lg text-gray-300 mb-6">It looks like you haven't added any movies to your favorites. Start exploring and add some!</p>
+            <p className="text-lg text-gray-300 mb-6">
+                It looks like you haven&apos;t added any movies to your favorites. Start exploring and add some!
+            </p>
           </div>
         </div>
       )}

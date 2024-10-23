@@ -98,7 +98,7 @@ const LoginPage = () => {
                     </form>
                     
                     <p className="mt-6 text-center text-gray-300">
-                        Don't have an account? <Link href="/register" className="text-indigo-600 hover:text-indigo-700">Register here</Link>
+                        Don&apos;t have an account? <Link href="/register" className="text-indigo-600 hover:text-indigo-700">Register here</Link>
                     </p>
 
                     {errorMessage && <div className="mb-4 p-4 bg-red-100 text-red-600 rounded mt-3">{errorMessage}</div>}

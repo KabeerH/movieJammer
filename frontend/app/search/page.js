@@ -71,7 +71,7 @@ const SearchPage = () => {
                 {/* message */}
                 <h2 className="text-3xl font-bold text-indigo-600 mb-4">Oops! No Movies Found</h2>
                 <p className="text-lg text-gray-300 mb-6">
-                    It seems we couldn't find any movies for "<span className="text-white">{query}</span>".
+                    It seems we couldn&apos;t find any movies for &quot;<span className="text-white">{query}</span>&quot;.
                 </p>
 
                 {/* Suggest going back to search */}
@@ -87,7 +87,7 @@ const SearchPage = () => {
     return (
         <div className="min-h-screen bg-gray-800 p-6">
             <h1 className="text-4xl font-extrabold text-center text-indigo-400 bg-gray-700 shadow-lg rounded-lg p-6 animate__animated animate__fadeIn animate__delay-1s mb-6 mt-20">
-                Search Results for "<span className="text-indigo-400 italic">{query}</span>"
+                Search Results for &quot;<span className="text-indigo-400 italic">{query}</span>&quot;
             </h1>
 
             <div className="w-full max-w-6xl mx-auto"> {/* Center the content horizontally */}
