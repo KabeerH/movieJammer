@@ -8,31 +8,44 @@ Check out MovieJaMMer @https://movie-jammer.vercel.app/
 
 1. [Features](#features)
 2. [Technology Stack](#technology-stack)
-3. [Project Structure](#project-structure)
-4. [Getting Started](#getting-started)
-5. [API Endpoints](#api-endpoints)
-6. [Environment Variables](#environment-variables)
-7. [Deployment](#deployment)
-8. [Testing](#testing)
-9. [Future Enhancements](#future-enhancements)
-10. [Contributing](#contributing)
-
+3. [Deployment](#deployment)
+4. [Project Structure](#project-structure)
+5. [Future Enhancements](#future-enhancements)
 
 ## **Features**
 
+- **Movie Searching**:
+Easily search for movies and DVDs using a robust database, retrieving details such as titles, genres, release dates, ratings, and more.
 
+- **Movie Favoriting**:
+Add movies or DVDs to your favorites list for quick access. Manage your personal collection of favorite movies directly from your profile.
 
+- **Account Authentication**:
+Secure account management system using JWT for authentication. Features include registration, login, logout, and password protection with bcrypt hashing for enhanced security.
+
+- **Advanced Movie/DVD Details**:
+Dive deep into movie or DVD details with comprehensive metadata, including cast, crew, synopsis, runtime, user reviews, trailers, and availability in physical or streaming formats.
+
+- **CRUD Operations on Account Details**:
+Create, Read, Update, and Delete account information, such as profile details, contact information, and preferences. Includes a confirmation step for sensitive actions like account deletion.
 
 ## **Technology Stack**
 
 ### **Frontend:**
 
-
+- **Framework:** Next.js (React-based framework for server-side rendering and static site generation)
+- **Styling:** TailwindCSS for utility-first responsive design
+- **API Calls**: Axios for seamless HTTP requests
 
 ### **Backend:**
 
+- **Framework:** Express.js for building the RESTful API
+- **Database:** MongoDB (NoSQL database) with Mongoose for schema and model management
+- **Authentication:** JSON Web Tokens (JWT) for secure user authentication
+- **Password Security:** bcrypt for password hashing
+- **Hosting:** Localhost during development, with deployment-ready support for platforms like AWS, Vercel, or Heroku
 
-### **Deployment:**
+## **Deployment:**
 
 - **Vercel:** Frontend is deployed on Vercel for fast and reliable performance with automatic scaling. Backend APIS have also been deployed on Vercel (for free) using vercel.json file incorporation. 
 
@@ -100,18 +113,28 @@ movieJammer/
 
 ```
 
-## **Getting Started**
+## **Future Enhancements**
 
-### **Prerequisites:**
+- **Advanced Search Filters:**
+Enable users to filter search results by genre, release year, ratings, language, and availability in streaming platforms.
 
-- Node.js 
-- MongoDB (Cloud or Local instance)
+- **User Reviews and Ratings:**
+Allow users to leave reviews and rate movies directly on the platform, creating a community-driven experience.
 
-### **Installation Steps:**
+- **Recommendations Engine:**
+Implement a recommendation system based on user favorites, and genre preferences using machine learning.
 
-1. **Clone the repository:**
+- **Implement Remaining Pages:**
+Develop the unfinished pages (once the user logs in)
 
-   ```bash
-   git clone https://github.com/KabeerH/movieJammer.git
-   ```
-   
+- **Admin Dashboard:**
+Develop an admin panel to manage users, movies, reviews, and reports, ensuring smooth platform maintenance (Permissions and authenication).
+
+## **Contact** 
+
+**Email:** [kabeerharjani@gmail.com](mailto:kabeerharjani@gmail.com)
+
+**LinkedIn:** [linkedin/in/kabeer-harjani](https://www.linkedin.com/in/kabeer-harjani)
+
+**Website:** [KabeerHarjani.netlify](https://kabeerharjani.netlify.app/)
+
